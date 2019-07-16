@@ -10,3 +10,5 @@ PHY110-2 is a program that simulates projectile motion with some position, poten
 6-4-3vdw2 makes some computations and displays isotherms for various molecules in the included txt file vdwconstants.txt
 
 Planck Law.py plots the radiative power curves for 3 different blackbody radiators at 3 different average temperatures
+
+Pyfigletprograms.py in conjunction with fontdata.txt allows printing strings in various colors with ascii art.
