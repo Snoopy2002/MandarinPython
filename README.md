@@ -3,6 +3,9 @@
 #Contains projectile.py, a projectile motion simulator (without air resistance) and projectiletk.py, 
 #which is programmed with a tkinter GUI interface.
 
+#projectile.py displays strictly to stdout no graphical interface
+
+
 #Note that projectiletk has a support module that loads libraries, etc. which is the projectiletk_support file. 
 #The program saves all matplotlib images and displays them in tkinter frames. 
 
