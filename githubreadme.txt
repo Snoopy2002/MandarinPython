@@ -1,14 +1,7 @@
-EarthSimIndex calculates the Earth Similarity Index for various planets as obtained from the planetdata.txt data file
-
-Globe.py is example of using Basemap to draw the globe using a Robinson projection
-
-4-4-2citiesonmap is a program that will draw a great circle route for any two cities on the planet with the option 
-of some different map projections
-
-projectile is a program that simulates projectile motion with some position, potential, and kinetic energy graphs
-
-6-4-3vdw2 makes some computations and displays isotherms for various molecules in the included txt file vdwconstants.txt
-
-Planck Law.py plots the radiative power curves for 3 different blackbody radiators at 3 different average temperatures
-
-Pyfigletprograms.py in conjunction with fontdata.txt allows printing strings in various colors with ascii art.
+Algebra2Lab1 simple lab to create list and print
+Solver.py is algebra 2 lab 4 on solving polynomials
+Algebra2Lab3Skeleton is the code students will add to for performing operations on polynomials (add, subtract, etc)
+Algebra2Lab3FinalForm is the code students will more or less have when their result is in final form
+Sympy1.py is to introduce sympy, the sympify command and factoring with sympy
+Turtlelabs.py are the labs that students will gradually develop in class
+Turtleenhance.py adds the drawing feature to the turtle program after the shapes are drawn
