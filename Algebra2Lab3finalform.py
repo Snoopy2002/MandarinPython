@@ -28,20 +28,19 @@ except:
 else:
     x=sp.Symbol('x')
     pfunc=product(expr1, expr2)
-    '''
     pfunc2=subtract(expr1,expr2)
     pfunc3=add(expr1,expr2)
     pfunc4=divide(expr1,expr2)
     sp.pprint(pfunc)
-    
     sp.pprint(pfunc2)
     sp.pprint(pfunc3)
     sp.pprint(pfunc4)
-    '''
-    plt= sp.plot(expr1,expr2,pfunc, (x,-5,5), legend=True, show=False)
+    plt = sp.plot(expr1,expr2,pfunc,pfunc2, pfunc3, pfunc4, (x,-5,5), legend=True, show=False)
     plt[0].line_color='green'
     plt[1].line_color='red'
     plt[2].line_color='blue'
+    plt[3].line_color='brown'
+    plt[4].line_color='orange'
+    plt[5].line_color='violet'
     plt.show()
-    
     
