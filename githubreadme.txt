@@ -5,3 +5,4 @@ Algebra2Lab3FinalForm is the code students will more or less have when their res
 Sympy1.py is to introduce sympy, the sympify command and factoring with sympy
 Turtlelabs.py are the labs that students will gradually develop in class
 Turtleenhance.py adds the drawing feature to the turtle program after the shapes are drawn
+Geometry.py works as a simple regular polygon drawer and it allows user to draw SSS/SAS/ASA/AAS triangles
