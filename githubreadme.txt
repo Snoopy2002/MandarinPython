@@ -12,3 +12,5 @@ projectile is a program that simulates projectile motion with some position, pot
 Planck Law.py plots the radiative power curves for 3 different blackbody radiators at 3 different average temperatures
 
 Pyfigletprograms.py in conjunction with fontdata.txt allows printing strings in various colors with ascii art.
+
+corona.py opens the datafile at Johns Hopkins and plots out some data for coronavirus cases, giving a data table, location map, and caseload bar graph
