@@ -7,7 +7,7 @@ Created on Sun Mar  8 21:50:21 2020
 
 import numpy as np
 import os
-import sys
+#import sys
 os.environ['PROJ_LIB'] = r'C:\Users\Snoopy\Installs\Anaconda\pkgs\proj4-5.2.0-ha925a31_1\Library\share'
 import pandas as pd
 from mpl_toolkits.basemap import Basemap
@@ -15,12 +15,7 @@ import matplotlib.pyplot as plt
 import datetime
 import webbrowser
 import gmplot
-#import plotly as py
-#import plotly.express as px
-#import plotly.graph_objs as go
-#from plotly.subplots import make_subplots
-#from plotly.offline import download_plotlyjs, init_notebook_mode, plot, iplot
-#init_notebook_mode(connected=True)
+
 
 def getvirus(): #opens website and writes data to a file
       
@@ -43,7 +38,19 @@ def getvirus(): #opens website and writes data to a file
            df.to_csv('c:\pythonprograms\Coronavirus\coronadata2.csv', index=False)
         except:
             print("ERROR IN URL, RE-ENTER MONTH/DAY/YEAR\n")
-            sys.exit()
+            print("OPENING FILE ON DISK. ")
+            df=pd.read_csv('c:\\pythonprograms\\Coronavirus\\03-17-2020.csv')
+            df.columns=['Province','Country', 'Updated', 'Confirmed','Deaths','Recovered','Lat','Long']
+            df.sort_values('Country', ascending=True, inplace=True)
+        
+            #code can be activated to print the raw pandas dataframe
+        
+            #with pd.option_context('display.max_rows', None, 'display.max_columns', None):  # more options can be specified also
+             #        print(df)
+        
+            df = df[df['Confirmed']>0] 
+            df.to_csv('c:\pythonprograms\Coronavirus\coronadata2.csv', index=False)
+            #sys.exit()
         else:
             pass
         
@@ -59,14 +66,14 @@ def plotmap(df):
        m.drawcoastlines()
        m.drawcountries()
        m.drawmapboundary(fill_color='#99ffff')
-       m.fillcontinents(color='#cc9966',lake_color='#99ffff', zorder=5)
+       m.fillcontinents(color='#cc9966',lake_color='#99ffff')
        m.drawparallels(np.arange(-90.,120.,30.))
        m.drawmeridians(np.arange(0.,360.,30.))
        plt.tight_layout()
        plt.title(title)
        lons, lats = m(lon,lat)
        # plot points as red dots
-       m.scatter(lons, lats, marker = 'o', color='r', label="Coronavirus Locations", zorder=20)
+       m.scatter(lons, lats, marker = 'o', color='r', label="Coronavirus Locations", zorder=100)
        plt.pause(0.5)
        plt.legend()
        plt.show()
@@ -89,9 +96,8 @@ def graphcases(df):
     plt.show() 
     
 def datatable(df):
-     df_table = pd.DataFrame({'Province': df['Province'],'Country': df['Country'], 'Cases': df['Confirmed'],'Deaths': df['Deaths']})
-
-     #render dataframe as html
+     df_table = pd.DataFrame({'Province': df['Province'],'Country': df['Country'], 'Cases': df['Confirmed'],'Deaths': df['Deaths'], 'Recovered': df['Recovered']})
+    #render dataframe as html
      html = df_table.to_html()
 
      #write html to file
@@ -100,7 +106,7 @@ def datatable(df):
      text_file.close()
      webbrowser.open('Coronavirusdata.html', new=2)
      
-def heatmap(df):
+def heatmap(df): #code to create google maps heatmap
     
     lats= df["Lat"]
     lons = df["Long"]
