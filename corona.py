@@ -39,17 +39,16 @@ def getvirus(): #opens website and writes data to a file
         except:
             print("ERROR IN URL, RE-ENTER MONTH/DAY/YEAR\n")
             print("OPENING FILE ON DISK. ")
-            df=pd.read_csv('c:\\pythonprograms\\Coronavirus\\03-17-2020.csv')
+            
+            df=pd.read_csv('c:\\pythonprograms\\Coronavirus\\coronadata2.csv')
             df.columns=['Province','Country', 'Updated', 'Confirmed','Deaths','Recovered','Lat','Long']
             df.sort_values('Country', ascending=True, inplace=True)
         
             #code can be activated to print the raw pandas dataframe
         
-            #with pd.option_context('display.max_rows', None, 'display.max_columns', None):  # more options can be specified also
-             #        print(df)
+            with pd.option_context('display.max_rows', None, 'display.max_columns', None):  # more options can be specified also
+                     print(df)
         
-            df = df[df['Confirmed']>0] 
-            df.to_csv('c:\pythonprograms\Coronavirus\coronadata2.csv', index=False)
             #sys.exit()
         else:
             pass
