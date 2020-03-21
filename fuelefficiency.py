@@ -3,6 +3,8 @@
 Created on Fri Mar 20 13:33:47 2020
 
 @author: Snoopy
+
+ Note: Needs the datafile 2018USfuelefficiency2.csv present in this directory for 2018 US autos
 """
 
 import pandas as pd
